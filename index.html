@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
+   <meta name="referrer" content="no-referrer"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ChangHui-Lin.github.io">
-  <title>天空~</title>
+  <title>天空 Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="天空~">
+<meta property="og:title" content="天空 Log~">
 <meta property="og:url" content="https://changhui-lin.github.io/index.html">
-<meta property="og:site_name" content="天空~">
+<meta property="og:site_name" content="天空 Log~">
 <meta property="og:locale">
 <meta property="article:author" content="Lin">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="天空~" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="天空 Log~" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -53,7 +54,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -125,7 +126,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 100%"><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -141,6 +142,397 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Linux基础命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux基础命令</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-11-17T13:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h2><blockquote>
+<p> <strong>ls命令</strong></p>
+</blockquote>
+<p><code>ls [-a -l -h] [Linux路径]</code></p>
+<ul>
+<li>-a -l -h 是可选的选项</li>
+<li>Linux路径是此命令可选的参数</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172035166.png" alt="image-20221117203521068"></p>
+<ul>
+<li><code>-a</code>	能看到这些隐藏的文件&#x2F;文件夹</li>
+<li><code>-l</code>     表示：以列表（竖向排列）的形式展示内容，并展示更多信息</li>
+<li><code>-h</code>     表示以易于阅读的形式，列出文件大小，如K、M、G -h选项必须要搭配 <code>-l</code> 一起使用</li>
+</ul>
+<blockquote>
+<p> <strong>cd切换工作目录</strong></p>
+</blockquote>
+<p><code>cd [Linux路径]</code></p>
+<ul>
+<li>cd命令无需选项，只有参数，表示要切换到哪个目录下</li>
+<li>cd命令直接执行，不写参数，表示回到用户的HOME目录</li>
+</ul>
+<blockquote>
+<p><strong>pwd</strong> <strong>查看当前工作目录</strong></p>
+</blockquote>
+<p><code>pwd</code></p>
+<ul>
+<li>pwd命令来自：Print Work Directory</li>
+<li>pwd命令，无选项，无参数，直接输入<code>pwd</code>即可</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172044963.png" alt="image-20221117204406918"></p>
+<blockquote>
+<p><strong>mkdir命令</strong></p>
+</blockquote>
+<p><code>mkdir [-p] Linux路径</code></p>
+<ul>
+<li>参数必填，表示Linux路径，即要创建的文件夹的路径，相对路径或绝对路径均可</li>
+<li><code>-p</code>选项可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录</li>
+</ul>
+<blockquote>
+<p><strong>touch</strong> <strong>创建文件</strong></p>
+</blockquote>
+<p><code>touch Linux路径</code></p>
+<ul>
+<li>touch命令无选项，参数必填，表示要创建的文件路径，相对、绝对、特殊路径符均可以使用</li>
+</ul>
+<blockquote>
+<p><strong>cat命令</strong> <strong>查看文件内容</strong></p>
+</blockquote>
+<p><code>cat Linux路径</code></p>
+<blockquote>
+<p><strong>more命令查看文件内容</strong></p>
+</blockquote>
+<p><code>more Linux路径</code></p>
+<ul>
+<li>空格下一页</li>
+<li>ctrl+b上一页</li>
+<li>回车下一行 </li>
+<li>q退出查看</li>
+</ul>
+<blockquote>
+<p><strong>cp命令复制文件文件夹</strong></p>
+</blockquote>
+<p><code>cp [-r] 参数1 参数2</code></p>
+<ul>
+<li><code>-r</code>选项，可选，用于复制文件夹使用，表示递归</li>
+<li>参数1，Linux路径，表示被复制的文件或文件夹</li>
+<li>参数2，Linux路径，表示要复制去的地方</li>
+</ul>
+<blockquote>
+<p><strong>mv移动文件或文件夹</strong></p>
+</blockquote>
+<p><code>mv 参数1 参数2</code></p>
+<ul>
+<li>参数1，Linux路径，表示被移动的文件或文件夹 </li>
+<li>参数2，Linux路径，表示要移动去的地方，如果目标不存在，则进行改名，确保目标存在</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172052567.png" alt="image-20221117205241521"></p>
+<blockquote>
+<p><strong>rm删除文件、文件夹</strong></p>
+</blockquote>
+<p><code>rm [-r -f] 参数1 参数2 ...... 参数N</code></p>
+<ul>
+<li>同cp命令一样，<code>-r</code>选项用于删除文件夹</li>
+<li><code>-f</code>表示force，强制删除（不会弹出提示确认信息</li>
+<li>参数1、参数2、……、参数N 表示要删除的文件或文件夹路径，按照空格隔开</li>
+<li>命令支持通配符 *，用来做模糊匹配</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172055652.png" alt="image-20221117205503605"></p>
+<blockquote>
+<p><strong>which命令</strong></p>
+</blockquote>
+<p><code>which 要查找的命令</code></p>
+<ul>
+<li>通过which命令，查看所使用的一系列命令的程序文件存放在哪里</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172056297.png" alt="image-20221117205648262"></p>
+<blockquote>
+<p> <strong>find命令-</strong> <strong>按文件名查找文件</strong></p>
+</blockquote>
+<p><code>find 起始路径 -name &quot;被查找文件名&quot;</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172101096.png" alt="image-20221117210128033"></p>
+<p><code>find 起始路径 -size +|-n[KMG]</code></p>
+<ul>
+<li><p>+、- 表示大于和小于</p>
+</li>
+<li><p>n表示大小数字</p>
+</li>
+<li><p>kMG表示大小单位，k(小写字母)表示kb，M表示MB，G表示GB</p>
+</li>
+</ul>
+<p>•查找小于10KB的文件：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -size -10k</span><br></pre></td></tr></table></figure>
+<p>•查找大于100MB的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -size +100M</span><br></pre></td></tr></table></figure>
+
+<p>•查找大于1GB的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -size +1G</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>grep命令</strong></p>
+</blockquote>
+<ul>
+<li>通过grep命令，从文件中通过关键字过滤文件行</li>
+</ul>
+<p><code>grep [-n] 关键字 文件路径</code></p>
+<ul>
+<li>选项-n，可选，表示在结果中显示匹配的行的行号。</li>
+<li>参数，关键字，必填，表示过滤的关键字，带有空格或其它特殊符号，建议使用””将关键字包围起来</li>
+<li>参数，文件路径，必填，表示要过滤内容的文件路径，可作为内容输入端口</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172130436.png" alt="image-20221117213039387"></p>
+<blockquote>
+<p><strong>wc命令做数量统计</strong></p>
+</blockquote>
+<p>可以通过wc命令统计文件的行数、单词数量等</p>
+<p><code>wc [-c -m -l -w]</code></p>
+<ul>
+<li><p>选项，<code>-c</code>，统计bytes数量</p>
+</li>
+<li><p>选项，<code>-m</code>，统计字符数量</p>
+</li>
+<li><p>选项，<code>-l</code>，统计行数</p>
+</li>
+<li><p>选项，<code>-w</code>，统计单词数量</p>
+</li>
+<li><p>参数，文件路径，被统计的文件，可作为内容输入端口</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>echo命令</strong></p>
+</blockquote>
+<p>可以使用echo命令在命令行内输出指定内容</p>
+<p><code>echo 输出的内容</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172109113.png" alt="image-20221117210926070"></p>
+<ul>
+<li>我们可以通过将命令用反引号（通常也称之为飘号）&#96;将其包围</li>
+</ul>
+<p>​		被&#96;包围的内容，会被作为命令执行，而非普通字符</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211172111241.png" alt="image-20221117211107204"></p>
+<p>重定向符：&gt;和&gt;&gt;</p>
+<ul>
+<li><p><code>&gt;</code>将左侧命令的结果，覆盖写入到符号右侧指定的文件中</p>
+</li>
+<li><p><code>&gt;&gt;</code>，将左侧命令的结果，追加写入到符号右侧指定的文件中</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>tail命令</strong></p>
+</blockquote>
+<p>使用tail命令，可以查看文件尾部内容，跟踪文件的最新更改</p>
+<p><code>tail [-f -num] Linux路径</code></p>
+<ul>
+<li><p>参数，Linux路径，表示被跟踪的文件路径</p>
+</li>
+<li><p>选项，<code>-f</code>，表示持续跟踪</p>
+</li>
+<li><p>选项, <code>-num</code>，表示，查看尾部多少行，不填默认10行</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>vi\vim编辑器</strong></p>
+</blockquote>
+<p><code>vim 文件路径</code></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>命令模式</td>
+<td><code>i</code></td>
+<td>在当前光标位置进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>a</code></td>
+<td>在当前光标位置之后进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>I</code></td>
+<td>在当前行的开头，进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>A</code></td>
+<td>在当前尾的开头，进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>o</code></td>
+<td>在当前光标的下一行，进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>O</code></td>
+<td>在当前光标的上一行，进入<code>输入模式</code></td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>pageup</code></td>
+<td>上一页</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>pagedown</code></td>
+<td>下一页</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>/</code></td>
+<td>进入搜索模式</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>n</code></td>
+<td>向下继续搜索</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>N</code></td>
+<td>向上继续搜索</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>dd</code></td>
+<td>删除光标所在行</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>ndd</code></td>
+<td>n是数字，表示删除当前光标向下n行</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>yy</code></td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>nyy</code></td>
+<td>n是数字，复制当前行和下面的n行</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>p</code></td>
+<td>粘贴复制的内容</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>u</code></td>
+<td>撤销修改</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>ctrl+r</code></td>
+<td>反向撤销修改</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>gg</code></td>
+<td>跳到首行</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>G</code></td>
+<td>跳到行尾</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>dG</code></td>
+<td>从当前行开始，向下全部删除</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>dgg</code></td>
+<td>从当前行开始，向上全部删除</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>d$</code></td>
+<td>从当前光标开始，删除到本行的结尾</td>
+</tr>
+<tr>
+<td>命令模式</td>
+<td><code>d0</code></td>
+<td>从当前光标开始，删除到本行的开头</td>
+</tr>
+<tr>
+<td>输入模式</td>
+<td><code>esc</code></td>
+<td>任何情况下输入<code>esc</code>回到命令模式</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Centos7-安装JDK1-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -404,7 +796,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 天空~
+    		&copy; 2022 天空 Log~
     	</div>
       	<div class="footer-right">
 			 By Hui
@@ -488,6 +880,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
@@ -544,7 +940,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://ChangHui-Lin.netlify.app/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://ChangHui-Lin.netlify.app/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人主页</a>
             </li>
           
         </ul>
