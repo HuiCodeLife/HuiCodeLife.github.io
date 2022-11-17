@@ -152,6 +152,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7-安装JDK1-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">Centos7 安装JDK1.8</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" class="archive-article-date">
+  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-检查当前机器是否有自带的JDK"><a href="#1-检查当前机器是否有自带的JDK" class="headerlink" title="1.检查当前机器是否有自带的JDK"></a>1.检查当前机器是否有自带的JDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-如果没有-则跳至安装步骤，有的话-进行卸载"><a href="#2-如果没有-则跳至安装步骤，有的话-进行卸载" class="headerlink" title="2.如果没有 则跳至安装步骤，有的话 进行卸载"></a>2.如果没有 则跳至安装步骤，有的话 进行卸载</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-更新yum源"><a href="#3-更新yum源" class="headerlink" title="3.更新yum源"></a>3.更新yum源</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-搜索yum中的软件包"><a href="#4-搜索yum中的软件包" class="headerlink" title="4.搜索yum中的软件包"></a>4.搜索yum中的软件包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list java-1.8*</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-安装OpenJDK"><a href="#5-安装OpenJDK" class="headerlink" title="5.安装OpenJDK"></a>5.安装OpenJDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-验证是否安装成功"><a href="#6-验证是否安装成功" class="headerlink" title="6.验证是否安装成功"></a>6.验证是否安装成功</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nacos安装指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -274,6 +359,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">springcloud alibaba</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -399,6 +495,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springcloud alibaba</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
