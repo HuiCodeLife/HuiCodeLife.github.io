@@ -9,15 +9,15 @@
   <link rel="dns-prefetch" href="https://ChangHui-Lin.github.io">
   <title>Centos7 安装JDK1.8 | 天空 Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.检查当前机器是否有自带的JDK123rpm -qa |grep javarpm -qa |grep jdkrpm -qa |grep gcj  2.如果没有 则跳至安装步骤，有的话 进行卸载1rpm -qa | grep java | xargs rpm -e --nodeps  3.更新yum源1yum update -y  4.搜索yum中的软件包1yum list java-1.8*">
+  <meta name="description" content="1.检查当前机器是否有自带的JDK123rpm -qa |grep javarpm -qa |grep jdkrpm -qa |grep gcj">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos7 安装JDK1.8">
 <meta property="og:url" content="https://changhui-lin.github.io/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/index.html">
 <meta property="og:site_name" content="天空 Log~">
-<meta property="og:description" content="1.检查当前机器是否有自带的JDK123rpm -qa |grep javarpm -qa |grep jdkrpm -qa |grep gcj  2.如果没有 则跳至安装步骤，有的话 进行卸载1rpm -qa | grep java | xargs rpm -e --nodeps  3.更新yum源1yum update -y  4.搜索yum中的软件包1yum list java-1.8*">
+<meta property="og:description" content="1.检查当前机器是否有自带的JDK123rpm -qa |grep javarpm -qa |grep jdkrpm -qa |grep gcj">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-11-17T06:24:50.000Z">
-<meta property="article:modified_time" content="2022-11-17T06:25:40.579Z">
+<meta property="article:modified_time" content="2022-11-18T13:52:04.184Z">
 <meta property="article:author" content="Lin">
 <meta property="article:tag" content="centos">
 <meta name="twitter:card" content="summary">
@@ -167,6 +167,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="1-检查当前机器是否有自带的JDK"><a href="#1-检查当前机器是否有自带的JDK" class="headerlink" title="1.检查当前机器是否有自带的JDK"></a>1.检查当前机器是否有自带的JDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 
 <h5 id="2-如果没有-则跳至安装步骤，有的话-进行卸载"><a href="#2-如果没有-则跳至安装步骤，有的话-进行卸载" class="headerlink" title="2.如果没有 则跳至安装步骤，有的话 进行卸载"></a>2.如果没有 则跳至安装步骤，有的话 进行卸载</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
 
@@ -430,11 +432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">centos</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
