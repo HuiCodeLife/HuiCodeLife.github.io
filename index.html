@@ -143,6 +143,706 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux常用操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/17/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Linux常用操作</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/17/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2022-11-17T11:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>ctrl + c</strong> <strong>强制停止</strong></p>
+<p><strong>ctrl + d</strong> <strong>退出或登出</strong></p>
+<p><strong>history查看历史命令记录</strong></p>
+<ul>
+<li><p>!命令</p>
+</li>
+<li><p>ctrl+r模糊历史记录向上匹配</p>
+</li>
+</ul>
+<p><strong>光标移动快捷键</strong></p>
+<ul>
+<li><p>ctrl + a，跳到命令开头</p>
+</li>
+<li><p>ctrl + e，跳到命令结尾</p>
+</li>
+</ul>
+<p>清屏</p>
+<ul>
+<li>ctrl+l</li>
+<li>clear</li>
+</ul>
+</blockquote>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><ul>
+<li>CentOS系统使用：<ul>
+<li>yum [-y] [install | remove | search]  软件名称<ul>
+<li>install 安装</li>
+<li>remove 卸载</li>
+<li>search 搜索</li>
+<li>-y，自动确认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ubuntu系统使用<ul>
+<li>apt [-y] [install | remove | search]  软件名称<ul>
+<li>install 安装</li>
+<li>remove 卸载</li>
+<li>search 搜索</li>
+<li>-y，自动确认</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>yum 和 apt 均需要root权限</p>
+</blockquote>
+<h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>功能：控制系统服务的启动关闭等</p>
+<p>语法：<code>systemctl start | stop | restart | disable | enable | status 服务名</code></p>
+<ul>
+<li>start，启动</li>
+<li>stop，停止</li>
+<li>status，查看状态</li>
+<li>disable，关闭开机自启</li>
+<li>enable，开启开机自启</li>
+<li>restart，重启</li>
+</ul>
+<p>例子:</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181641905.png" alt="image-20221118164118792"></p>
+<h2 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h2><p>功能：创建文件、文件夹软链接（快捷方式）</p>
+<p>语法：<code>ln -s 参数1 参数2</code></p>
+<ul>
+<li>参数1：被链接的</li>
+<li>参数2：要链接去的地方（快捷方式的名称和存放位置）</li>
+</ul>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>语法：<code>date [-d] [+格式化字符串]</code></p>
+<ul>
+<li><p>-d 按照给定的字符串显示日期，一般用于日期计算</p>
+</li>
+<li><p>格式化字符串：通过特定的字符串标记，来控制显示的日期格式</p>
+<ul>
+<li>%Y   年%y   年份后两位数字 (00..99)</li>
+<li>%m   月份 (01..12)</li>
+<li>%d   日 (01..31)</li>
+<li>%H   小时 (00..23)</li>
+<li>%M   分钟 (00..59)</li>
+<li>%S   秒 (00..60)</li>
+<li>%s   自 1970-01-01 00:00:00 UTC 到现在的秒数</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li><p>按照2022-01-01 10:00:00的格式显示日期</p>
+<p><img src="C:\Users\Lin\AppData\Roaming\Typora\typora-user-images\image-20221118172759578.png" alt="image-20221118172759578"></p>
+</li>
+<li><p>-d选项日期计算</p>
+<p><img src="https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027220429.png" alt="image-20221027220429831"></p>
+<ul>
+<li><p>支持的时间标记为：</p>
+<p><img src="https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027220449.png" alt="image-20221027220449312"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181729471.png" alt="image-20221118172907419"></p>
+<h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><p>修改时区为中国时区<img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181731709.png" alt="image-20221118173145651"></p>
+<h2 id="ntp"><a href="#ntp" class="headerlink" title="ntp"></a>ntp</h2><p>功能：同步时间</p>
+<p>安装：<code>yum install -y ntp</code></p>
+<p>启动管理：<code>systemctl start | stop | restart | status | disable | enable ntpd</code></p>
+<p>手动校准时间：<code>ntpdate -u ntp.aliyun.com</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181734152.png" alt="image-20221118173425111"></p>
+<h2 id="ip地址"><a href="#ip地址" class="headerlink" title="ip地址"></a>ip地址</h2><p>格式：a.b.c.d</p>
+<ul>
+<li>abcd为0~255的数字</li>
+</ul>
+<p>特殊IP：</p>
+<ul>
+<li>127.0.0.1，表示本机</li>
+<li>0.0.0.0<ul>
+<li>可以表示本机</li>
+<li>也可以表示任意IP（看使用场景）</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181737466.png" alt="image-20221118173729424"></p>
+<p>查看ip：<code>ifconfig</code></p>
+<h2 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h2><p>功能：Linux系统的名称</p>
+<p>查看：<code>hostname</code></p>
+<p>设置：<code>hostnamectl set-hostname 主机名</code></p>
+<h2 id="配置VMware固定IP"><a href="#配置VMware固定IP" class="headerlink" title="配置VMware固定IP"></a>配置VMware固定IP</h2><ol>
+<li><p>修改VMware网络</p>
+</li>
+<li><p>设置Linux内部固定IP</p>
+<p>修改文件：<code>/etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+<p>示例文件内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">TYPE=&quot;Ethernet&quot;</span><br><span class="line">PROXY_METHOD=&quot;none&quot;</span><br><span class="line">BROWSER_ONLY=&quot;no&quot;</span><br><span class="line">BOOTPROTO=&quot;static&quot;			# 改为static，固定IP</span><br><span class="line">DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV4_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6INIT=&quot;yes&quot;</span><br><span class="line">IPV6_AUTOCONF=&quot;yes&quot;</span><br><span class="line">IPV6_DEFROUTE=&quot;yes&quot;</span><br><span class="line">IPV6_FAILURE_FATAL=&quot;no&quot;</span><br><span class="line">IPV6_ADDR_GEN_MODE=&quot;stable-privacy&quot;</span><br><span class="line">NAME=&quot;ens33&quot;</span><br><span class="line">UUID=&quot;1b0011cb-0d2e-4eaa-8a11-af7d50ebc876&quot;</span><br><span class="line">DEVICE=&quot;ens33&quot;</span><br><span class="line">ONBOOT=&quot;yes&quot;</span><br><span class="line">IPADDR=&quot;192.168.200.131&quot;		# IP地址，自己设置，要匹配网络范围</span><br><span class="line">NETMASK=&quot;255.255.255.0&quot;		# 子网掩码，固定写法255.255.255.0</span><br><span class="line">GATEWAY=&quot;192.168.200.2&quot;		# 网关，要和VMware中配置的一致</span><br><span class="line">DNS1=&quot;192.168.200.2&quot;			# DNS1服务器，和网关一致即可</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="ping命令"><a href="#ping命令" class="headerlink" title="ping命令"></a>ping命令</h2><p><code>ping [-c num] ip或主机名</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181813479.png" alt="image-20221118181356420"></p>
+<h2 id="wget命令"><a href="#wget命令" class="headerlink" title="wget命令"></a>wget命令</h2><p><code>wget [-b] url</code></p>
+<ul>
+<li><p>选项：-b，可选，后台下载，会将日志写入到当前工作目录的wget-log文件</p>
+</li>
+<li><p>参数：url，下载链接</p>
+</li>
+</ul>
+<h2 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h2><p>curl可以发送http网络请求，可用于：下载文件、获取信息等</p>
+<p><code>curl [-O] url</code></p>
+<ul>
+<li><p>选项：-O，用于下载文件，当url是下载链接时，可以使用此选项保存文件</p>
+</li>
+<li><p>参数：url，要发起请求的网络地址</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181820377.png" alt="image-20221118182025255"></p>
+<h2 id="查看端口占用"><a href="#查看端口占用" class="headerlink" title="查看端口占用"></a><strong>查看端口占用</strong></h2><p>可以通过Linux命令去查看端口的占用情况</p>
+<ul>
+<li>使用nmap命令，安装nmap：<code>yum -y install nmap</code></li>
+</ul>
+<p><code>nmap 被查看的IP地址</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181827406.png" alt="image-20221118182713296"></p>
+<p>可以通过netstat命令，查看指定端口的占用情况</p>
+<p><code>netstat -anp | grep 端口号</code>，安装netstat：<code>yum -y install net-tools</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181832331.png" alt="image-20221118183207259"></p>
+<h2 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h2><p>功能：查看进程信息</p>
+<p>语法：<code>ps -ef</code>，查看全部进程信息，可以搭配grep做过滤：<code>ps -ef | grep xxx</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181837474.png" alt="image-20221118183700424"></p>
+<h2 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h2><p><code>kill [-9] 进程ID</code></p>
+<ul>
+<li><code>-9</code>强制停止</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181840737.png" alt="image-20221118184026679"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181840800.png"></p>
+<h2 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h2><p>功能：查看主机运行状态</p>
+<p>语法：<code>top</code>，查看基础信息</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181843841.png" alt="image-20221118184341741"></p>
+<p>可用选项：</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181849349.png" alt="image-20221118184953260"></p>
+<p>交互式模式中，可用快捷键 略</p>
+<h2 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h2><p>查看磁盘占用</p>
+<p><code>df [-h]</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181858767.png" alt="image-20221118185859699"></p>
+<h2 id="iostat命令"><a href="#iostat命令" class="headerlink" title="iostat命令"></a>iostat命令</h2><p>查看CPU、磁盘的相关信息</p>
+<p><code>iostat [-x] [num1] [num2]</code></p>
+<ul>
+<li><p>•选项：-x，显示更多信息</p>
+</li>
+<li><p>num1：数字，刷新间隔，num2：数字，刷新几次</p>
+</li>
+</ul>
+<h2 id="sar命令"><a href="#sar命令" class="headerlink" title="sar命令"></a>sar命令</h2><p>查看网络统计</p>
+<p><code>sar -n DEV [num1] [num2]</code></p>
+<ul>
+<li><p>选项：<code>-n</code>，查看网络，DEV表示查看网络接口</p>
+</li>
+<li><p>num1：刷新间隔（不填就查看一次结束），num2：查看次数（不填无限次数）</p>
+</li>
+</ul>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
+<li>临时设置：export 变量名&#x3D;变量值</li>
+<li>永久设置：<ul>
+<li>针对用户，设置用户HOME目录内：<code>.bashrc</code>文件</li>
+<li>针对全局，设置<code>/etc/profile</code></li>
+</ul>
+</li>
+</ul>
+<p>例子：针对用户</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181916022.png" alt="image-20221118191633967"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181916677.png"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181917244.png" alt="image-20221118191703206"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181925028.png" alt="image-20221118192503996"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181928913.png" alt="image-20221118192843868"></p>
+<p>即可实现任意路径执行</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181929976.png" alt="image-20221118192926925"></p>
+<h3 id="PATH变量"><a href="#PATH变量" class="headerlink" title="PATH变量"></a>PATH变量</h3><p>记录了执行程序的搜索路径</p>
+<p>可以将自定义路径加入PATH内，实现自定义命令在任意地方均可执行的效果</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181923132.png" alt="image-20221118192312081"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181922899.png" alt="image-20221118192242863"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181923519.png" alt="image-20221118192357471"></p>
+<h2 id="符号"><a href="#符号" class="headerlink" title="$符号"></a>$符号</h2><p>可以取出指定的环境变量的值</p>
+<p>语法：<code>$变量名</code></p>
+<p>示例：</p>
+<p><code>echo $PATH</code>，输出PATH环境变量的值</p>
+<p><code>echo $&#123;PATH&#125;ABC</code>，输出PATH环境变量的值以及ABC</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181911426.png" alt="image-20221118191137314"></p>
+<p>如果变量名和其它内容混淆在一起，可以使用${}</p>
+<h2 id="压缩解压"><a href="#压缩解压" class="headerlink" title="压缩解压"></a>压缩解压</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p><code>tar -zcvf 压缩包 被压缩1...被压缩2...被压缩N</code></p>
+<ul>
+<li>-z表示使用gzip，可以不写</li>
+</ul>
+<p><code>zip [-r] 参数1 参数2 参数N</code></p>
+<p><img src="https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027221906.png" alt="image-20221027221906247"></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p><code>tar -zxvf 被解压的文件 -C 要解压去的地方</code></p>
+<ul>
+<li>-z表示使用gzip，可以省略</li>
+<li>-C，可以省略，指定要解压去的地方，不写解压到当前目录</li>
+</ul>
+<p><code>unzip [-d] 参数</code></p>
+<p><img src="https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2022/10/27/20221027221939.png" alt="image-20221027221939899"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/17/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Centos7-安装JDK1-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">Centos7 安装JDK1.8</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" class="archive-article-date">
+  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-检查当前机器是否有自带的JDK"><a href="#1-检查当前机器是否有自带的JDK" class="headerlink" title="1.检查当前机器是否有自带的JDK"></a>1.检查当前机器是否有自带的JDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-如果没有-则跳至安装步骤，有的话-进行卸载"><a href="#2-如果没有-则跳至安装步骤，有的话-进行卸载" class="headerlink" title="2.如果没有 则跳至安装步骤，有的话 进行卸载"></a>2.如果没有 则跳至安装步骤，有的话 进行卸载</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-更新yum源"><a href="#3-更新yum源" class="headerlink" title="3.更新yum源"></a>3.更新yum源</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-搜索yum中的软件包"><a href="#4-搜索yum中的软件包" class="headerlink" title="4.搜索yum中的软件包"></a>4.搜索yum中的软件包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list java-1.8*</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-安装OpenJDK"><a href="#5-安装OpenJDK" class="headerlink" title="5.安装OpenJDK"></a>5.安装OpenJDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-验证是否安装成功"><a href="#6-验证是否安装成功" class="headerlink" title="6.验证是否安装成功"></a>6.验证是否安装成功</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nacos安装指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">nacos安装指南</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" class="archive-article-date">
+  	<time datetime="2022-11-16T11:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Nacos安装指南"><a href="#Nacos安装指南" class="headerlink" title="Nacos安装指南"></a>Nacos安装指南</h1><h1 id="1-Windows安装"><a href="#1-Windows安装" class="headerlink" title="1.Windows安装"></a>1.Windows安装</h1><p>开发阶段采用单机安装即可。</p>
+<h2 id="1-1-下载安装包"><a href="#1-1-下载安装包" class="headerlink" title="1.1.下载安装包"></a>1.1.下载安装包</h2><p>在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：</p>
+<p>GitHub主页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
+<p>GitHub的Release下载页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
+<p>如图：</p>
+<p><img src="/images/image-20210402161102887.png" alt="image-20210402161102887"></p>
+<p>如采用1.4.1.版本的Nacos，课前资料已经准备了安装包：</p>
+<!-- ![image-20210402161130261](/images/image-20210402161130261.png) -->
+<p><img src="/images/image-20210402161102887.png" alt="image-20210402161130261"></p>
+<p>windows版本使用<code>nacos-server-1.4.1.zip</code>包即可。</p>
+<h2 id="1-2-解压"><a href="#1-2-解压" class="headerlink" title="1.2.解压"></a>1.2.解压</h2><p>将这个包解压到任意非中文目录下，如图：</p>
+<p><img src="/images/image-20210402161843337.png" alt="image-20210402161843337"></p>
+<p>目录说明：</p>
+<ul>
+<li>bin：启动脚本</li>
+<li>conf：配置文件</li>
+</ul>
+<h2 id="1-3-端口配置"><a href="#1-3-端口配置" class="headerlink" title="1.3.端口配置"></a>1.3.端口配置</h2><p>Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端口，请先尝试关闭该进程。</p>
+<p><strong>如果无法关闭占用8848端口的进程</strong>，也可以进入nacos的conf目录，修改配置文件中的端口：</p>
+<p><img src="/images/image-20210402162008280.png" alt="image-20210402162008280"></p>
+<p>修改其中的内容：</p>
+<p><img src="/images/image-20210402162251093.png" alt="image-20210402162251093"></p>
+<h2 id="1-4-启动"><a href="#1-4-启动" class="headerlink" title="1.4.启动"></a>1.4.启动</h2><p>启动非常简单，进入bin目录，结构如下：</p>
+<p><img src="/images/image-20210402162350977.png" alt="image-20210402162350977"></p>
+<p>然后执行命令即可：</p>
+<ul>
+<li><p>windows命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup.cmd -m standalone</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>执行后的效果如图：</p>
+<p><img src="/images/image-20210402162526774.png" alt="image-20210402162526774"></p>
+<h2 id="1-5-访问"><a href="#1-5-访问" class="headerlink" title="1.5.访问"></a>1.5.访问</h2><p>在浏览器输入地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos%E5%8D%B3%E5%8F%AF%EF%BC%9A">http://127.0.0.1:8848/nacos即可：</a></p>
+<p><img src="/images/image-20210402162630427.png" alt="image-20210402162630427"></p>
+<p>默认的账号和密码都是nacos，进入后：</p>
+<p><img src="/images/image-20210402162709515.png" alt="image-20210402162709515"></p>
+<h1 id="2-Linux安装"><a href="#2-Linux安装" class="headerlink" title="2.Linux安装"></a>2.Linux安装</h1><p>Linux或者Mac安装方式与Windows类似。</p>
+<h2 id="2-1-安装JDK"><a href="#2-1-安装JDK" class="headerlink" title="2.1.安装JDK"></a>2.1.安装JDK</h2><p>Nacos依赖于JDK运行，索引Linux上也需要安装JDK才行。</p>
+<p>上传jdk安装包：</p>
+<p><img src="/images/image-20210402172334810.png" alt="image-20210402172334810"></p>
+<p>上传到某个目录，例如：<code>/usr/local/</code></p>
+<p>然后解压缩：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf jdk-8u144-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>然后重命名为java</p>
+<p>配置环境变量：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/java</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+
+<p>设置环境变量：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="2-2-上传安装包"><a href="#2-2-上传安装包" class="headerlink" title="2.2.上传安装包"></a>2.2.上传安装包</h2><p>如图：</p>
+<p><img src="/images/image-20210402161102887.png" alt="image-20210402161102887"></p>
+<p>也可以直接使用课前资料中的tar.gz：</p>
+<p><img src="/images/image-20210402161130261.png" alt="image-20210402161130261"></p>
+<p>上传到Linux服务器的某个目录，例如<code>/usr/local/src</code>目录下：</p>
+<p><img src="/images/image-20210402163715580.png" alt="image-20210402163715580"></p>
+<h2 id="2-3-解压"><a href="#2-3-解压" class="headerlink" title="2.3.解压"></a>2.3.解压</h2><p>命令解压缩安装包：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf nacos-server-1.4.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>然后删除安装包：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf nacos-server-1.4.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>目录中最终样式：</p>
+<p><img src="/images/image-20210402163858429.png" alt="image-20210402163858429"></p>
+<p>目录内部：</p>
+<p><img src="/images/image-20210402164414827.png" alt="image-20210402164414827"></p>
+<h2 id="2-4-端口配置"><a href="#2-4-端口配置" class="headerlink" title="2.4.端口配置"></a>2.4.端口配置</h2><p>与windows中类似</p>
+<h2 id="2-5-启动"><a href="#2-5-启动" class="headerlink" title="2.5.启动"></a>2.5.启动</h2><p>在nacos&#x2F;bin目录中，输入命令启动Nacos：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh startup.sh -m standalone</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="3-Nacos的依赖"><a href="#3-Nacos的依赖" class="headerlink" title="3.Nacos的依赖"></a>3.Nacos的依赖</h1><p>父工程：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-alibaba-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>客户端：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nacos客户端依赖包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">springcloud alibaba</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux用户与权限" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/16/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/">Linux用户与权限</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/16/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/" class="archive-article-date">
+  	<time datetime="2022-11-16T07:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h2><p>切换用户</p>
+<p>语法：<code>su [-] [用户]</code></p>
+<h2 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h2><p>比如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hui ALL=(ALL)       NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+
+<p>在visudo内配置如上内容，可以让user1用户，无需密码直接使用<code>sudo</code></p>
+<p>​							<img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607783.png" alt="image-20221118160705733"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607018.png" alt="image-20221118160753967"></p>
+<h2 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h2><p>修改文件、文件夹权限</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181552084.png" alt="image-20221118155240047"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181553705.png" alt="image-20221118155307671"></p>
+<p>语法：<code>chmod [-R] 权限 参数</code></p>
+<ul>
+<li><p>权限，要设置的权限，比如755，表示：<code>rwxr-xr-x</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181520656.png" alt="image-20221027222157276"></p>
+</li>
+<li><p>参数，被修改的文件、文件夹</p>
+</li>
+<li><p>选项-R，设置文件夹和其内部全部内容一样生效</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181557729.png" alt="image-20221118155725671"></p>
+<h2 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h2><p>修改文件、文件夹所属用户、组</p>
+<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p>以下命令需root用户执行</p>
+<blockquote>
+<p><strong>创建用户组</strong></p>
+</blockquote>
+<p><code>groupadd 用户组名</code></p>
+<blockquote>
+<p><strong>删除用户组</strong></p>
+</blockquote>
+<p><code>groupdel 用户组名</code></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p>以下命令需root用户执行</p>
+<blockquote>
+<p><strong>创建用户</strong></p>
+</blockquote>
+<p><code>useradd [-g -d] 用户名</code></p>
+<ul>
+<li><p>选项：-g指定用户的组，不指定-g，会创建同名组并自动加入，指定-g需要组已经存在，如已存在同名组，必须使用-g</p>
+</li>
+<li><p>选项：-d指定用户HOME路径，不指定，HOME目录默认在：&#x2F;home&#x2F;用户名</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>删除用户</strong></p>
+</blockquote>
+<p><code>userdel [-r] 用户名</code></p>
+<ul>
+<li>选项：-r，删除用户的HOME目录，不使用-r，删除用户时，HOME目录保留</li>
+</ul>
+<blockquote>
+<p><strong>查看用户所属组</strong></p>
+</blockquote>
+<p><code>id [用户名]</code></p>
+<ul>
+<li>参数：用户名，被查看的用户，如果不提供则查看自身</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551775.png" alt="image-20221118155128737"></p>
+<blockquote>
+<p><strong>修改用户所属组</strong></p>
+</blockquote>
+<p><code>usermod -aG 用户组 用户名</code>，将指定用户加入指定用户组</p>
+<h2 id="genent命令"><a href="#genent命令" class="headerlink" title="genent命令"></a>genent命令</h2><ul>
+<li><code>getent group</code>，查看系统全部的用户组</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551596.png" alt="image-20221118155105567"></p>
+<ul>
+<li><code>getent passwd</code>，查看系统全部的用户</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181550964.png" alt="image-20221118154951796"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/16/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Linux基础命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -150,13 +850,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux基础命令</a>
+      <a class="article-title" href="/2022/11/15/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">Linux基础命令</a>
     </h1>
   
 
         
-        <a href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2022-11-17T13:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+        <a href="/2022/11/15/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2022-11-15T13:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-15</time>
 </a>
         
       </header>
@@ -504,259 +1204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/17/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Centos7-安装JDK1-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">Centos7 安装JDK1.8</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="1-检查当前机器是否有自带的JDK"><a href="#1-检查当前机器是否有自带的JDK" class="headerlink" title="1.检查当前机器是否有自带的JDK"></a>1.检查当前机器是否有自带的JDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-如果没有-则跳至安装步骤，有的话-进行卸载"><a href="#2-如果没有-则跳至安装步骤，有的话-进行卸载" class="headerlink" title="2.如果没有 则跳至安装步骤，有的话 进行卸载"></a>2.如果没有 则跳至安装步骤，有的话 进行卸载</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
-
-<h5 id="3-更新yum源"><a href="#3-更新yum源" class="headerlink" title="3.更新yum源"></a>3.更新yum源</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update -y</span><br></pre></td></tr></table></figure>
-
-<h5 id="4-搜索yum中的软件包"><a href="#4-搜索yum中的软件包" class="headerlink" title="4.搜索yum中的软件包"></a>4.搜索yum中的软件包</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list java-1.8*</span><br></pre></td></tr></table></figure>
-
-<h5 id="5-安装OpenJDK"><a href="#5-安装OpenJDK" class="headerlink" title="5.安装OpenJDK"></a>5.安装OpenJDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure>
-
-<h5 id="6-验证是否安装成功"><a href="#6-验证是否安装成功" class="headerlink" title="6.验证是否安装成功"></a>6.验证是否安装成功</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">centos</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/17/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nacos安装指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">nacos安装指南</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" class="archive-article-date">
-  	<time datetime="2022-11-16T11:59:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Nacos安装指南"><a href="#Nacos安装指南" class="headerlink" title="Nacos安装指南"></a>Nacos安装指南</h1><h1 id="1-Windows安装"><a href="#1-Windows安装" class="headerlink" title="1.Windows安装"></a>1.Windows安装</h1><p>开发阶段采用单机安装即可。</p>
-<h2 id="1-1-下载安装包"><a href="#1-1-下载安装包" class="headerlink" title="1.1.下载安装包"></a>1.1.下载安装包</h2><p>在Nacos的GitHub页面，提供有下载链接，可以下载编译好的Nacos服务端或者源代码：</p>
-<p>GitHub主页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos">https://github.com/alibaba/nacos</a></p>
-<p>GitHub的Release下载页：<a target="_blank" rel="noopener" href="https://github.com/alibaba/nacos/releases">https://github.com/alibaba/nacos/releases</a></p>
-<p>如图：</p>
-<p><img src="/images/image-20210402161102887.png" alt="image-20210402161102887"></p>
-<p>如采用1.4.1.版本的Nacos，课前资料已经准备了安装包：</p>
-<!-- ![image-20210402161130261](/images/image-20210402161130261.png) -->
-<p><img src="/images/image-20210402161102887.png" alt="image-20210402161130261"></p>
-<p>windows版本使用<code>nacos-server-1.4.1.zip</code>包即可。</p>
-<h2 id="1-2-解压"><a href="#1-2-解压" class="headerlink" title="1.2.解压"></a>1.2.解压</h2><p>将这个包解压到任意非中文目录下，如图：</p>
-<p><img src="/images/image-20210402161843337.png" alt="image-20210402161843337"></p>
-<p>目录说明：</p>
-<ul>
-<li>bin：启动脚本</li>
-<li>conf：配置文件</li>
-</ul>
-<h2 id="1-3-端口配置"><a href="#1-3-端口配置" class="headerlink" title="1.3.端口配置"></a>1.3.端口配置</h2><p>Nacos的默认端口是8848，如果你电脑上的其它进程占用了8848端口，请先尝试关闭该进程。</p>
-<p><strong>如果无法关闭占用8848端口的进程</strong>，也可以进入nacos的conf目录，修改配置文件中的端口：</p>
-<p><img src="/images/image-20210402162008280.png" alt="image-20210402162008280"></p>
-<p>修改其中的内容：</p>
-<p><img src="/images/image-20210402162251093.png" alt="image-20210402162251093"></p>
-<h2 id="1-4-启动"><a href="#1-4-启动" class="headerlink" title="1.4.启动"></a>1.4.启动</h2><p>启动非常简单，进入bin目录，结构如下：</p>
-<p><img src="/images/image-20210402162350977.png" alt="image-20210402162350977"></p>
-<p>然后执行命令即可：</p>
-<ul>
-<li><p>windows命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup.cmd -m standalone</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>执行后的效果如图：</p>
-<p><img src="/images/image-20210402162526774.png" alt="image-20210402162526774"></p>
-<h2 id="1-5-访问"><a href="#1-5-访问" class="headerlink" title="1.5.访问"></a>1.5.访问</h2><p>在浏览器输入地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8848/nacos%E5%8D%B3%E5%8F%AF%EF%BC%9A">http://127.0.0.1:8848/nacos即可：</a></p>
-<p><img src="/images/image-20210402162630427.png" alt="image-20210402162630427"></p>
-<p>默认的账号和密码都是nacos，进入后：</p>
-<p><img src="/images/image-20210402162709515.png" alt="image-20210402162709515"></p>
-<h1 id="2-Linux安装"><a href="#2-Linux安装" class="headerlink" title="2.Linux安装"></a>2.Linux安装</h1><p>Linux或者Mac安装方式与Windows类似。</p>
-<h2 id="2-1-安装JDK"><a href="#2-1-安装JDK" class="headerlink" title="2.1.安装JDK"></a>2.1.安装JDK</h2><p>Nacos依赖于JDK运行，索引Linux上也需要安装JDK才行。</p>
-<p>上传jdk安装包：</p>
-<p><img src="/images/image-20210402172334810.png" alt="image-20210402172334810"></p>
-<p>上传到某个目录，例如：<code>/usr/local/</code></p>
-<p>然后解压缩：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf jdk-8u144-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>然后重命名为java</p>
-<p>配置环境变量：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/local/java</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br></pre></td></tr></table></figure>
-
-<p>设置环境变量：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="2-2-上传安装包"><a href="#2-2-上传安装包" class="headerlink" title="2.2.上传安装包"></a>2.2.上传安装包</h2><p>如图：</p>
-<p><img src="/images/image-20210402161102887.png" alt="image-20210402161102887"></p>
-<p>也可以直接使用课前资料中的tar.gz：</p>
-<p><img src="/images/image-20210402161130261.png" alt="image-20210402161130261"></p>
-<p>上传到Linux服务器的某个目录，例如<code>/usr/local/src</code>目录下：</p>
-<p><img src="/images/image-20210402163715580.png" alt="image-20210402163715580"></p>
-<h2 id="2-3-解压"><a href="#2-3-解压" class="headerlink" title="2.3.解压"></a>2.3.解压</h2><p>命令解压缩安装包：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf nacos-server-1.4.1.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>然后删除安装包：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> -rf nacos-server-1.4.1.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>目录中最终样式：</p>
-<p><img src="/images/image-20210402163858429.png" alt="image-20210402163858429"></p>
-<p>目录内部：</p>
-<p><img src="/images/image-20210402164414827.png" alt="image-20210402164414827"></p>
-<h2 id="2-4-端口配置"><a href="#2-4-端口配置" class="headerlink" title="2.4.端口配置"></a>2.4.端口配置</h2><p>与windows中类似</p>
-<h2 id="2-5-启动"><a href="#2-5-启动" class="headerlink" title="2.5.启动"></a>2.5.启动</h2><p>在nacos&#x2F;bin目录中，输入命令启动Nacos：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh startup.sh -m standalone</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="3-Nacos的依赖"><a href="#3-Nacos的依赖" class="headerlink" title="3.Nacos的依赖"></a>3.Nacos的依赖</h1><p>父工程：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-alibaba-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>客户端：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- nacos客户端依赖包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">springcloud alibaba</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/16/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/11/15/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
