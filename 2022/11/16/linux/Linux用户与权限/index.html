@@ -7,15 +7,30 @@
    <meta name="referrer" content="no-referrer"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ChangHui-Lin.github.io">
-  <title>Archives: 2022/11 | Log~</title>
+  <title>Linux用户与权限 | Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Log~">
-<meta property="og:url" content="https://changhui-lin.github.io/archives/2022/11/index.html">
+  <meta name="description" content="su命令切换用户 语法：su [-] [用户] sudo命令比如： 1hui ALL&#x3D;(ALL)       NOPASSWD: ALL  在visudo内配置如上内容，可以让user1用户，无需密码直接使用sudo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux用户与权限">
+<meta property="og:url" content="https://changhui-lin.github.io/2022/11/16/linux/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/index.html">
 <meta property="og:site_name" content="Log~">
+<meta property="og:description" content="su命令切换用户 语法：su [-] [用户] sudo命令比如： 1hui ALL&#x3D;(ALL)       NOPASSWD: ALL  在visudo内配置如上内容，可以让user1用户，无需密码直接使用sudo">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607783.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607018.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181552084.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181553705.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181520656.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181557729.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551775.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551596.png">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181550964.png">
+<meta property="article:published_time" content="2022-11-16T07:30:50.000Z">
+<meta property="article:modified_time" content="2022-11-18T13:53:23.021Z">
 <meta property="article:author" content="Eason-Lin">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607783.png">
   
     <link rel="alternative" href="/atom.xml" title="Log~" type="application/atom+xml">
   
@@ -140,74 +155,138 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-linux/Linux用户与权限" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux用户与权限
+    </h1>
+  
+
+        
+        <a href="/2022/11/16/linux/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/" class="archive-article-date">
+  	<time datetime="2022-11-16T07:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="su命令"><a href="#su命令" class="headerlink" title="su命令"></a>su命令</h2><p>切换用户</p>
+<p>语法：<code>su [-] [用户]</code></p>
+<h2 id="sudo命令"><a href="#sudo命令" class="headerlink" title="sudo命令"></a>sudo命令</h2><p>比如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hui ALL=(ALL)       NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+
+<p>在visudo内配置如上内容，可以让user1用户，无需密码直接使用<code>sudo</code></p>
+<span id="more"></span>
+
+<p>​							<img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607783.png" alt="image-20221118160705733"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181607018.png" alt="image-20221118160753967"></p>
+<h2 id="chmod命令"><a href="#chmod命令" class="headerlink" title="chmod命令"></a>chmod命令</h2><p>修改文件、文件夹权限</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181552084.png" alt="image-20221118155240047"></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181553705.png" alt="image-20221118155307671"></p>
+<p>语法：<code>chmod [-R] 权限 参数</code></p>
+<ul>
+<li><p>权限，要设置的权限，比如755，表示：<code>rwxr-xr-x</code></p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181520656.png" alt="image-20221027222157276"></p>
+</li>
+<li><p>参数，被修改的文件、文件夹</p>
+</li>
+<li><p>选项-R，设置文件夹和其内部全部内容一样生效</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181557729.png" alt="image-20221118155725671"></p>
+<h2 id="chown命令"><a href="#chown命令" class="headerlink" title="chown命令"></a>chown命令</h2><p>修改文件、文件夹所属用户、组</p>
+<p>语法：<code>chown [-R] [用户][:][用户组] 文件或文件夹</code></p>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p>以下命令需root用户执行</p>
+<blockquote>
+<p><strong>创建用户组</strong></p>
+</blockquote>
+<p><code>groupadd 用户组名</code></p>
+<blockquote>
+<p><strong>删除用户组</strong></p>
+</blockquote>
+<p><code>groupdel 用户组名</code></p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p>以下命令需root用户执行</p>
+<blockquote>
+<p><strong>创建用户</strong></p>
+</blockquote>
+<p><code>useradd [-g -d] 用户名</code></p>
+<ul>
+<li><p>选项：-g指定用户的组，不指定-g，会创建同名组并自动加入，指定-g需要组已经存在，如已存在同名组，必须使用-g</p>
+</li>
+<li><p>选项：-d指定用户HOME路径，不指定，HOME目录默认在：&#x2F;home&#x2F;用户名</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>删除用户</strong></p>
+</blockquote>
+<p><code>userdel [-r] 用户名</code></p>
+<ul>
+<li>选项：-r，删除用户的HOME目录，不使用-r，删除用户时，HOME目录保留</li>
+</ul>
+<blockquote>
+<p><strong>查看用户所属组</strong></p>
+</blockquote>
+<p><code>id [用户名]</code></p>
+<ul>
+<li>参数：用户名，被查看的用户，如果不提供则查看自身</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551775.png" alt="image-20221118155128737"></p>
+<blockquote>
+<p><strong>修改用户所属组</strong></p>
+</blockquote>
+<p><code>usermod -aG 用户组 用户名</code>，将指定用户加入指定用户组</p>
+<h2 id="genent命令"><a href="#genent命令" class="headerlink" title="genent命令"></a>genent命令</h2><ul>
+<li><code>getent group</code>，查看系统全部的用户组</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181551596.png" alt="image-20221118155105567"></p>
+<ul>
+<li><code>getent passwd</code>，查看系统全部的用户</li>
+</ul>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211181550964.png" alt="image-20221118154951796"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的心意<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/" class="archive-article-date">
-  	<time datetime="2022-11-19T12:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/">spring容器与 bean -  容器接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/Tomcat%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/" class="archive-article-date">
-  	<time datetime="2022-11-19T03:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/Tomcat%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/">Tomcat安装部署(单机)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -219,328 +298,117 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://changhui-lin.github.io/2022/11/16/linux/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/" alt="微信分享二维码">
+<!--       <img src="https://cli.im/api/qrcode/code?text=https://changhui-lin.github.io/2022/11/16/linux/Linux%E7%94%A8%E6%88%B7%E4%B8%8E%E6%9D%83%E9%99%90/&mhid=sELPDFnok80gPHovKdI" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/Redis%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/" class="archive-article-date">
-  	<time datetime="2022-11-19T03:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/11/16/SpringCloud%20Alibaba/nacos%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          nacos安装指南
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/11/15/linux/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux基础命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/Redis%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/">Redis安装部署(单机)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/RabbitMQ%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/" class="archive-article-date">
-  	<time datetime="2022-11-19T03:09:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/RabbitMQ%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/">RabbitMQ安装部署(单机)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/Nginx%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/" class="archive-article-date">
-  	<time datetime="2022-11-19T02:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/Nginx%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/">Nginx安装部署(单机)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/MySQL8.0%E7%89%88%E6%9C%AC%E5%9C%A8CentOS%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2022-11-19T02:50:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/MySQL8.0%E7%89%88%E6%9C%AC%E5%9C%A8CentOS%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">MySQL8.0版本在CentOS系统安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/19/linux/MySQL5.7%E7%89%88%E6%9C%AC%E5%9C%A8CentOS%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2022-11-19T02:20:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/19/linux/MySQL5.7%E7%89%88%E6%9C%AC%E5%9C%A8CentOS%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">MySQL5.7版本在CentOS系统安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-11-17T11:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Linux常用操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">Centos7 安装JDK1.8</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">ElasticSearch安装部署</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/11/page/2/">2</a><a class="page-number" href="/archives/2022/11/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/11/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
-
 
 
           </div>
@@ -564,8 +432,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
