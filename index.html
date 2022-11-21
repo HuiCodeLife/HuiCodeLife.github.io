@@ -57,7 +57,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
+				<li><a target="_blank" rel="noopener" href="https://ithuidev.netlify.app/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -68,10 +68,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -79,7 +75,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/ChangHui-Lin" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/ithuidev" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="https://space.bilibili.com/389428257" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
@@ -114,7 +110,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/ChangHui-Lin" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/ithuidev" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="https://space.bilibili.com/389428257" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
@@ -125,7 +121,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
+					<li style="width: 100%"><a target="_blank" rel="noopener" href="https://ithuidev.netlify.app/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -142,19 +138,262 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-spring/容器与 bean" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-spring/bean的加载方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/">spring容器与 bean -  容器接口</a>
+      <a class="article-title" href="/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/">bean的加载方式</a>
     </h1>
   
 
         
-        <a href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/" class="archive-article-date">
+        <a href="/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2022-11-20T12:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>方式一：配置文件+<code>&lt;bean/&gt;</code>标签</p>
+<p>方式二：配置文件扫描+注解定义bean（@Component、@Bean）</p>
+<p>方式三：注解方式声明配置类（@Component、@Bean）</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring/bean的生命周期" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/20/spring/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">bean的生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/20/spring/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="archive-article-date">
+  	<time datetime="2022-11-20T11:38:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Bean 的生命周期</p>
+<p>一个受 Spring 管理的 bean，生命周期主要阶段有</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/20/spring/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring/容器与-bean-容器实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E-bean-%E5%AE%B9%E5%99%A8%E5%AE%9E%E7%8E%B0/">容器与 bean-容器实现</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E-bean-%E5%AE%B9%E5%99%A8%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+  	<time datetime="2022-11-19T12:57:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>容器实现</strong></p>
+<ul>
+<li>beanFactory 可以通过 registerBeanDefinition 注册一个 bean definition 对象<ul>
+<li>我们平时使用的配置类、xml、组件扫描等方式都是生成 bean definition 对象注册到 beanFactory 当中</li>
+<li>bean definition 描述了这个 bean 的创建蓝图：scope 是什么、用构造还是工厂创建、初始化销毁方法是什么，等等</li>
+</ul>
+</li>
+<li>beanFactory 需要手动调用 beanFactory 后处理器对它做增强<ul>
+<li>例如通过解析 @Bean、@ComponentScan 等注解，来补充一些 bean definition</li>
+</ul>
+</li>
+<li>beanFactory 需要手动添加 bean 后处理器，以便对后续 bean 的创建过程提供增强<ul>
+<li>例如 @Autowired，@Resource 等注解的解析都是 bean 后处理器完成的</li>
+<li>bean 后处理的添加顺序会对解析结果有影响，如 @Autowired，@Resource 的例子</li>
+</ul>
+</li>
+<li>beanFactory 需要手动调用方法来初始化单例</li>
+<li>beanFactory 需要额外设置才能解析 ${} 与 #{}</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E-bean-%E5%AE%B9%E5%99%A8%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring/容器与 bean-容器接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean-%E5%AE%B9%E5%99%A8%E6%8E%A5%E5%8F%A3/">spring容器与 bean -  容器接口</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean-%E5%AE%B9%E5%99%A8%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
   	<time datetime="2022-11-19T12:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
 </a>
         
@@ -200,7 +439,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean-%E5%AE%B9%E5%99%A8%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
         </p>
       
 
@@ -701,253 +940,6 @@
 
 
   
-    <article id="post-linux/Linux常用操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">Linux常用操作</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-11-17T11:47:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>ctrl + c</strong> <strong>强制停止</strong></p>
-<p><strong>ctrl + d</strong> <strong>退出或登出</strong></p>
-<p><strong>history查看历史命令记录</strong></p>
-<ul>
-<li><p>!命令</p>
-</li>
-<li><p>ctrl+r模糊历史记录向上匹配</p>
-</li>
-</ul>
-<p><strong>光标移动快捷键</strong></p>
-<ul>
-<li><p>ctrl + a，跳到命令开头</p>
-</li>
-<li><p>ctrl + e，跳到命令结尾</p>
-</li>
-</ul>
-<p><strong>清屏</strong></p>
-<ul>
-<li>ctrl+l</li>
-<li>clear</li>
-</ul>
-</blockquote>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux/Centos7-安装JDK1-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">Centos7 安装JDK1.8</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="1-检查当前机器是否有自带的JDK"><a href="#1-检查当前机器是否有自带的JDK" class="headerlink" title="1.检查当前机器是否有自带的JDK"></a>1.检查当前机器是否有自带的JDK</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-linux/ElasticSearch安装部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">ElasticSearch安装部署</a>
-    </h1>
-  
-
-        
-        <a href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E">全文搜索</a>属于最常见的需求，开源的 <a target="_blank" rel="noopener" href="https://www.elastic.co/">Elasticsearch</a> （以下简称 es）是目前全文搜索引擎的首选。</p>
-<p>它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。</p>
-<p>Elasticsearch简称es，在企业内同样是一款应用非常广泛的搜索引擎服务。</p>
-<p>很多服务中的搜索功能，都是基于es来实现的。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
@@ -1009,25 +1001,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -1060,11 +1044,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+                <a href="javascript:void(0)" class="js-tag color4">cmd</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cmd</a>
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1110,18 +1094,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://ChangHui-Lin.netlify.app/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人主页</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

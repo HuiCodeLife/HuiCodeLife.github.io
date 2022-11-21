@@ -7,20 +7,22 @@
    <meta name="referrer" content="no-referrer"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ChangHui-Lin.github.io">
-  <title>ElasticSearch安装部署 | Log~</title>
+  <title>SpringBoot自动配置 | Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 es）是目前全文搜索引擎的首选。 它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。 Elasticsearch简称es，在企业内同样是一款应用非常广泛的搜索引擎服务。 很多服务中的搜索功能，都是基于es来实现的。">
+  <meta name="description" content="bean的加载控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ElasticSearch安装部署">
-<meta property="og:url" content="https://changhui-lin.github.io/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:title" content="SpringBoot自动配置">
+<meta property="og:url" content="https://changhui-lin.github.io/2022/11/01/springboot/SpringBoot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Log~">
-<meta property="og:description" content="简介全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 es）是目前全文搜索引擎的首选。 它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。 Elasticsearch简称es，在企业内同样是一款应用非常广泛的搜索引擎服务。 很多服务中的搜索功能，都是基于es来实现的。">
+<meta property="og:description" content="bean的加载控制">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-11-17T06:24:50.000Z">
-<meta property="article:modified_time" content="2022-11-19T03:21:53.005Z">
+<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211211011186.png">
+<meta property="article:published_time" content="2022-11-01T06:00:50.000Z">
+<meta property="article:modified_time" content="2022-11-21T08:50:12.477Z">
 <meta property="article:author" content="Eason-Lin">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Springboot">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211211011186.png">
   
     <link rel="alternative" href="/atom.xml" title="Log~" type="application/atom+xml">
   
@@ -141,52 +143,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-linux/ElasticSearch安装部署" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-springboot/SpringBoot自动配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ElasticSearch安装部署
+      SpringBoot自动配置
     </h1>
   
 
         
-        <a href="/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2022-11-17T06:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-17</time>
+        <a href="/2022/11/01/springboot/SpringBoot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2022-11-01T06:00:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%A8%E6%96%87%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E">全文搜索</a>属于最常见的需求，开源的 <a target="_blank" rel="noopener" href="https://www.elastic.co/">Elasticsearch</a> （以下简称 es）是目前全文搜索引擎的首选。</p>
-<p>它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。</p>
-<p>Elasticsearch简称es，在企业内同样是一款应用非常广泛的搜索引擎服务。</p>
-<p>很多服务中的搜索功能，都是基于es来实现的。</p>
-<span id="more"></span>
+        <h2 id="bean的加载控制"><a href="#bean的加载控制" class="headerlink" title="bean的加载控制"></a><strong>bean的加载控制</strong></h2><span id="more"></span>
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li><p>添加yum仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">root执行</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导入仓库密钥</span></span><br><span class="line">rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">添加yum源</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">编辑文件</span> </span><br><span class="line">vim /etc/yum.repos.d/elasticsearch.repo</span><br><span class="line"></span><br><span class="line">[elasticsearch-7.x]</span><br><span class="line">name=Elasticsearch repository for 7.x packages</span><br><span class="line">baseurl=https://artifacts.elastic.co/packages/7.x/yum</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line">enabled=1</span><br><span class="line">autorefresh=1</span><br><span class="line">type=rpm-md</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新yum缓存</span></span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装es</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y elasticsearch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置es</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/elasticsearch/elasticsearch.yml</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">17行，设置集群名称</span></span><br><span class="line">cluster.name: my-cluster</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">23行，设置节点名称</span></span><br><span class="line">node.name: node-1</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">56行，允许外网访问</span></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">74行，配置集群master节点</span></span><br><span class="line">cluster.initial_master_nodes: [&quot;node-1&quot;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动es</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start | stop | status | enable | disable elasticsearch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭防火墙</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试</p>
-<p>浏览器打开：<a target="_blank" rel="noopener" href="http://ip:9200/">http://ip:9200</a></p>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConditionalOnClass</span></span><br><span class="line"><span class="meta">@ConditionalOnMissingClass</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<h2 id="bean的依赖属性配置管理"><a href="#bean的依赖属性配置管理" class="headerlink" title="bean的依赖属性配置管理"></a>bean的依赖属性配置管理</h2><ol>
+<li>bean的运行如果需要外部设置值，建议将设置值封装成专用的属性类* * * * Properties</li>
+<li>设置属性类加载指定前缀的配置信息</li>
+<li>在需要使用属性类的位置通过注解@EnableConfigurationProperties加载bean，而不要直接在属性配置类上定义bean，减少资源加载的数量，因需加载而不要饱和式加载。</li>
 </ol>
+<h2 id="自动配置原理"><a href="#自动配置原理" class="headerlink" title="自动配置原理"></a>自动配置原理</h2><p>…</p>
+<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211211011186.png" alt="image-20221121101148094"></p>
+<ol>
+<li>springboot启动时先加载spring.factories文件中的org.springframework.boot.autoconfigure.EnableAutoConfiguration配置项，将其中配置的所有的类都加载成bean</li>
+<li>在加载bean的时候，bean对应的类定义上都设置有加载条件，因此有可能加载成功，也可能条件检测失败不加载bean</li>
+<li>对于可以正常加载成bean的类，通常会通过@EnableConfigurationProperties注解初始化对应的配置属性类并加载对应的配置</li>
+<li>配置属性类上通常会通过@ConfigurationProperties加载指定前缀的配置，当然这些配置通常都有默认值。如果没有默认值，就强制你必须配置后使用了</li>
+</ol>
+<h3 id="变更自动配置"><a href="#变更自动配置" class="headerlink" title="变更自动配置"></a>变更自动配置</h3><p><strong>方式一：通过yaml配置设置排除指定的自动配置类</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">autoconfigure:</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方式二：通过注解参数排除自动配置类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableAutoConfiguration(excludeName = &quot;&quot;,exclude = &#123;&#125;)</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -231,7 +234,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Springboot</a>
         		</li>
       		
 		</ul>
@@ -287,8 +290,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://changhui-lin.github.io/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/" alt="微信分享二维码">
-<!--       <img src="https://cli.im/api/qrcode/code?text=https://changhui-lin.github.io/2022/11/17/linux/ElasticSearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/&mhid=sELPDFnok80gPHovKdI" alt="微信分享二维码"> -->
+      <img src="//pan.baidu.com/share/qrcode?url=https://changhui-lin.github.io/2022/11/01/springboot/SpringBoot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/" alt="微信分享二维码">
+<!--       <img src="https://cli.im/api/qrcode/code?text=https://changhui-lin.github.io/2022/11/01/springboot/SpringBoot%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE/&mhid=sELPDFnok80gPHovKdI" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -303,20 +306,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/11/17/linux/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/11/01/springboot/Springboot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux常用操作
+          springboot统一异常处理
         
       </div>
     </a>
   
-  
-    <a href="/2022/11/17/linux/Centos7-%E5%AE%89%E8%A3%85JDK1-8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Centos7 安装JDK1.8</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

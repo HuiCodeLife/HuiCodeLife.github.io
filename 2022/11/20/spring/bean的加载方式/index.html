@@ -7,24 +7,20 @@
    <meta name="referrer" content="no-referrer"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ChangHui-Lin.github.io">
-  <title>spring容器与 bean -  容器接口 | Log~</title>
+  <title>bean的加载方式 | Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="容器与 bean -  容器接口容器接口 BeanFactory 接口，典型功能有：  getBean   ApplicationContext 接口，是 BeanFactory 的子接口。它扩展了 BeanFactory 接口的功能，如：  国际化 通配符方式获取一组 Resource 资源 整合 Environment 环境（能通过它获取各种来源的配置信息） 事件发布与监听，实现组件之间的解耦">
+  <meta name="description" content="方式一：配置文件+&lt;bean&#x2F;&gt;标签 方式二：配置文件扫描+注解定义bean（@Component、@Bean） 方式三：注解方式声明配置类（@Component、@Bean）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring容器与 bean -  容器接口">
-<meta property="og:url" content="https://changhui-lin.github.io/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/index.html">
+<meta property="og:title" content="bean的加载方式">
+<meta property="og:url" content="https://changhui-lin.github.io/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Log~">
-<meta property="og:description" content="容器与 bean -  容器接口容器接口 BeanFactory 接口，典型功能有：  getBean   ApplicationContext 接口，是 BeanFactory 的子接口。它扩展了 BeanFactory 接口的功能，如：  国际化 通配符方式获取一组 Resource 资源 整合 Environment 环境（能通过它获取各种来源的配置信息） 事件发布与监听，实现组件之间的解耦">
+<meta property="og:description" content="方式一：配置文件+&lt;bean&#x2F;&gt;标签 方式二：配置文件扫描+注解定义bean（@Component、@Bean） 方式三：注解方式声明配置类（@Component、@Bean）">
 <meta property="og:locale">
-<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211191958730.png">
-<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211192025542.png">
-<meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211192028452.png">
-<meta property="article:published_time" content="2022-11-19T12:24:50.000Z">
-<meta property="article:modified_time" content="2022-11-19T12:51:19.277Z">
+<meta property="article:published_time" content="2022-11-20T12:24:50.000Z">
+<meta property="article:modified_time" content="2022-11-21T08:45:13.387Z">
 <meta property="article:author" content="Eason-Lin">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211191958730.png">
   
     <link rel="alternative" href="/atom.xml" title="Log~" type="application/atom+xml">
   
@@ -66,7 +62,7 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
+				<li><a target="_blank" rel="noopener" href="https://ithuidev.netlify.app/">主页</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,10 +73,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -88,7 +80,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/ChangHui-Lin" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/ithuidev" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="https://space.bilibili.com/389428257" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
@@ -123,7 +115,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/ChangHui-Lin" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/ithuidev" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="https://space.bilibili.com/389428257" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
@@ -134,7 +126,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 100%"><a target="_blank" rel="noopener" href="https://ChangHui-Lin.netlify.app/">主页</a></li>
+					<li style="width: 100%"><a target="_blank" rel="noopener" href="https://ithuidev.netlify.app/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -149,82 +141,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-spring/容器与 bean" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring/bean的加载方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      spring容器与 bean -  容器接口
+      bean的加载方式
     </h1>
   
 
         
-        <a href="/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/" class="archive-article-date">
-  	<time datetime="2022-11-19T12:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-19</time>
+        <a href="/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2022-11-20T12:24:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="容器与-bean-容器接口"><a href="#容器与-bean-容器接口" class="headerlink" title="容器与 bean -  容器接口"></a>容器与 bean -  容器接口</h2><h3 id="容器接口"><a href="#容器接口" class="headerlink" title="容器接口"></a>容器接口</h3><ul>
-<li><p>BeanFactory 接口，典型功能有：</p>
-<ul>
-<li>getBean</li>
-</ul>
-</li>
-<li><p>ApplicationContext 接口，是 BeanFactory 的子接口。它扩展了 BeanFactory 接口的功能，如：</p>
-<ul>
-<li>国际化</li>
-<li>通配符方式获取一组 Resource 资源</li>
-<li>整合 Environment 环境（能通过它获取各种来源的配置信息）</li>
-<li>事件发布与监听，实现组件之间的解耦</li>
-</ul>
-</li>
-</ul>
+        <p>方式一：配置文件+<code>&lt;bean/&gt;</code>标签</p>
+<p>方式二：配置文件扫描+注解定义bean（@Component、@Bean）</p>
+<p>方式三：注解方式声明配置类（@Component、@Bean）</p>
 <span id="more"></span>
 
-<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211191958730.png" alt="image-20221119195852632"></p>
-<h4 id="收获💡"><a href="#收获💡" class="headerlink" title="收获💡"></a>收获💡</h4><ol>
-<li><p>到底什么是 BeanFactory</p>
 <ul>
-<li>它是 ApplicationContext 的父接口</li>
-<li>它才是 Spring 的核心容器, 主要的 ApplicationContext 实现都【组合】了它的功能，【组合】是指 ApplicationContext 的一个重要成员变量就是 BeanFactory</li>
+<li>使用FactroyBean接口</li>
+<li>注解格式导入XML格式配置的bean</li>
 </ul>
-</li>
-<li><p>BeanFactory 能干点啥</p>
-<ul>
-<li>表面上只有 getBean</li>
-<li>实际上控制反转、基本的依赖注入、直至 Bean 的生命周期的各种功能，都由它的实现类提供</li>
-<li>通过反射查看了它的成员变量 singletonObjects，内部包含了所有的单例 bean</li>
-</ul>
-</li>
-<li><p>ApplicationContext 比 BeanFactory 多点啥</p>
-<ul>
-<li>ApplicationContext 组合并扩展了 BeanFactory 的功能</li>
-<li><code>国际化</code>、<code>通配符方式获取一组 Resource 资源</code>、<code>整合 Environment 环境</code>、<code>事件发布与监听</code></li>
-<li>新学一种代码之间解耦途径，事件解耦</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>国际化</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(context.getMessage(<span class="string">&quot;hi&quot;</span>, <span class="literal">null</span>, Locale.CHINA));</span><br><span class="line">System.out.println(context.getMessage(<span class="string">&quot;hi&quot;</span>, <span class="literal">null</span>, Locale.ENGLISH));</span><br><span class="line">System.out.println(context.getMessage(<span class="string">&quot;hi&quot;</span>, <span class="literal">null</span>, Locale.JAPANESE));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ImportResource(&quot;applicationContext.xml&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringConfig</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211192025542.png" alt="image-20221119202518515"></p>
-<blockquote>
-<p>通配符方式获取一组 Resource 资源</p>
-<p>获取各种来源的配置信息</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Resource[] resources = context.getResources(<span class="string">&quot;classpath*:META-INF/spring.factories&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (Resource resource : resources) &#123;</span><br><span class="line">            System.out.println(resource);</span><br><span class="line">        &#125;</span><br><span class="line">System.out.println(context.getEnvironment().getProperty(<span class="string">&quot;java_home&quot;</span>));</span><br><span class="line">System.out.println(context.getEnvironment().getProperty(<span class="string">&quot;server.port&quot;</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>proxyBeanMethods属性</li>
+</ul>
+<p>方式四：使用@Import注解注入bean</p>
+<ul>
+<li>使用@Import注解注入配置类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Import(A.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringConfig</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211192028452.png" alt="image-20221119202804419"></p>
-<blockquote>
-<p>事件发布与监听，实现组件之间的解耦</p>
-</blockquote>
+<p>方式五：编程形式注册bean</p>
+<ul>
+<li>AnnotationConfigApplicationContext调用registerBean</li>
+</ul>
+<p>方式六：导入实现了ImportSelector接口的类</p>
+<ul>
+<li>实现ImportSelector接口的类</li>
+</ul>
+<p>方式七：导入实现了ImportBeanDefinitionRegistrar接口的类</p>
+<p>方式八：导入实现了BeanDefinitionRegistryPostProcessor接口的类</p>
 
       
 
@@ -325,8 +291,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://changhui-lin.github.io/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/" alt="微信分享二维码">
-<!--       <img src="https://cli.im/api/qrcode/code?text=https://changhui-lin.github.io/2022/11/19/spring/%E5%AE%B9%E5%99%A8%E4%B8%8E%20bean/&mhid=sELPDFnok80gPHovKdI" alt="微信分享二维码"> -->
+      <img src="//pan.baidu.com/share/qrcode?url=https://changhui-lin.github.io/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/" alt="微信分享二维码">
+<!--       <img src="https://cli.im/api/qrcode/code?text=https://changhui-lin.github.io/2022/11/20/spring/bean%E7%9A%84%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F/&mhid=sELPDFnok80gPHovKdI" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -342,8 +308,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2022/11/19/linux/Tomcat%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E3%80%90%E7%AE%80%E5%8D%95%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Tomcat安装部署(单机)</div>
+    <a href="/2022/11/20/spring/bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">bean的生命周期</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,25 +398,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -483,11 +441,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
+                <a href="javascript:void(0)" class="js-tag color4">cmd</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">cmd</a>
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
             
             <div class="clearfix"></div>
@@ -533,18 +491,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://ChangHui-Lin.netlify.app/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人主页</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
