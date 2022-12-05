@@ -9,12 +9,12 @@
   <link rel="dns-prefetch" href="https://ithuidev.github.io">
   <title>单例模式 | Log~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单例模式饿汉式 123456789public class Hungry &amp;#123;    private final static Hungry HUNGRY &#x3D; new Hungry();    private Hungry()&amp;#123;    &amp;#125;    public static Hungry getInstance()&amp;#123;        return HUNGRY;">
+  <meta name="description" content="单例模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单例模式">
 <meta property="og:url" content="https://ithuidev.github.io/2022/11/24/java/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Log~">
-<meta property="og:description" content="单例模式饿汉式 123456789public class Hungry &amp;#123;    private final static Hungry HUNGRY &#x3D; new Hungry();    private Hungry()&amp;#123;    &amp;#125;    public static Hungry getInstance()&amp;#123;        return HUNGRY;">
+<meta property="og:description" content="单例模式">
 <meta property="og:locale">
 <meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211260950843.png">
 <meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211261002647.png">
@@ -24,9 +24,9 @@
 <meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211261016865.png">
 <meta property="og:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211261021509.png">
 <meta property="article:published_time" content="2022-11-24T06:03:08.000Z">
-<meta property="article:modified_time" content="2022-11-26T06:09:09.232Z">
+<meta property="article:modified_time" content="2022-12-05T10:31:51.753Z">
 <meta property="article:author" content="Eason-Lin">
-<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/Lin-ChangHui/picture-bed/raw/master/images/202211260950843.png">
   
@@ -39,7 +39,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#93a5cf,#e4efe9);
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
   
@@ -169,7 +169,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>饿汉式</p>
+        <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><span id="more"></span>
+
+<p>饿汉式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hungry</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">Hungry</span> <span class="variable">HUNGRY</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Hungry</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Hungry</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Hungry <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> HUNGRY;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>懒汉式</p>
@@ -259,7 +261,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -388,7 +390,7 @@
     		&copy; 2022 by 🥝Eason-Lin
     	</div>
       	<div class="footer-right">
-           Hexo&yilia驱动 Hosted by GitHub Pages
+           <a href="https://github.com/hexojs/hexo" target="_blank"><b>Hexo&yilia驱动</b></a> Hosted by<a href="https://pages.github.com/" target="_blank"><b>GitHub Pages</b></a>
       	</div>
     </div>
   </div>
@@ -462,15 +464,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
-              </li>
-            
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringCloud Alibaba</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -478,7 +480,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -490,11 +492,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+            
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+                <a href="javascript:void(0)" class="js-tag color3">mq</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
             
               <li class="article-tag-list-item">
